@@ -14,6 +14,7 @@
         <module>network</module>
         <module>engineering-robot</module>
         <module>operator</module>
+        <module>serial</module>
     </modules>
 
     <properties>
@@ -21,8 +22,14 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <log4j.version>2.11.1</log4j.version>
+        <commons.beanutils.version>1.9.3</commons.beanutils.version>
+        <commons.configuration.version>2.4</commons.configuration.version>
         <google.guice.version>4.1.0</google.guice.version>
-        <freedesktop.gstreamer.version>0.9.3</freedesktop.gstreamer.version>
+        <gstreamer.version>0.9.4</gstreamer.version>
+        <jna.version>[4.4.0,5.0)</jna.version>
+        <junit.version>4.12</junit.version>
+        <jssc.version>2.8.0</jssc.version>
+        <intellij.forms_rt.version>7.0.3</intellij.forms_rt.version>
     </properties>
 
     <dependencyManagement>
@@ -38,14 +45,46 @@
                 <version>${log4j.version}</version>
             </dependency>
             <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons.beanutils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-configuration2</artifactId>
+                <version>${commons.configuration.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.google.inject</groupId>
                 <artifactId>guice</artifactId>
                 <version>${google.guice.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.scream3r</groupId>
+                <artifactId>jssc</artifactId>
+                <version>${jssc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>${jna.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.freedesktop.gstreamer</groupId>
                 <artifactId>gst1-java-core</artifactId>
-                <version>${freedesktop.gstreamer.version}</version>
+                <version>${gstreamer.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.intellij</groupId>
+                <artifactId>forms_rt</artifactId>
+                <version>${intellij.forms_rt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
