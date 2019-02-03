@@ -27,6 +27,8 @@ public class DashboardController {
     private final DashboardView view;
     private final DashboardModel model;
 
+    private Pipeline pipe;
+
     @Inject
     public DashboardController(
             DashboardView view,
@@ -58,7 +60,7 @@ public class DashboardController {
 
             Bin bin = Bin.launch(binConfg, true);
 
-            Pipeline pipe = new Pipeline();
+            pipe = new Pipeline();
             pipe.addMany(bin, view.videoComponent.getElement());
             Pipeline.linkMany(bin, view.videoComponent.getElement());
             pipe.play();
