@@ -6,7 +6,6 @@ import jssc.SerialPort;
 import jssc.SerialPortException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 
@@ -68,6 +67,6 @@ class SerialCommunicator {
     }
 
     public byte[] read() {
-        throw new NotImplementedException();
+        return new byte[0];
     }
 }
